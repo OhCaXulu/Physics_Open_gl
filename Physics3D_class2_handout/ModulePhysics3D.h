@@ -3,6 +3,7 @@
 #include "Globals.h"
 #include "p2List.h"
 #include "Primitive.h"
+#include "Bullet/include/btBulletDynamicsCommon.h"
 
 // TODO 1: Add Bullet common include btBulletDynamicsCommon.h
 
@@ -25,6 +26,12 @@ private:
 	bool debug;
 
 	DebugDrawer* debug_draw;
+	btDispatcher* dispatcher;
+	btBroadphaseInterface* pairCache;
+	btConstraintSolver* constraintSolver;
+	btCollisionConfiguration* collisionConfiguration;
+	
+	btDiscreteDynamicsWorld* world;
 };
 
 /*

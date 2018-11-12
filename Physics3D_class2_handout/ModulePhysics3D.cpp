@@ -3,8 +3,22 @@
 #include "ModulePhysics3D.h"
 #include "Primitive.h"
 
+
 // TODO 1: ...and the 3 libraries based on how we compile (Debug or Release)
 // use the _DEBUG preprocessor define
+
+#ifdef _DEBUG
+#pragma comment(lib, "Bullet/lib86x/BulletDynamics_debug.lib")
+#pragma comment(lib, "Bullet/lib86x/BulletCollision_debug.lib")
+#pragma comment(lib, "Bullet/lib86x/LinearMath_debug.lib")
+
+#else
+#pragma comment(lib, "Bullet/lib86x/BulletDynamics.lib")
+#pragma comment(lib, "Bullet/lib86x/BulletCollision.lib")
+#pragma comment(lib, "Bullet/lib86x/LinearMath.lib")
+
+#endif
+
 
 ModulePhysics3D::ModulePhysics3D(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
@@ -13,6 +27,13 @@ ModulePhysics3D::ModulePhysics3D(Application* app, bool start_enabled) : Module(
 
 	// TODO 2: Create collision configuration, dispacher
 	// broad _phase and solver
+
+	pairCache = new btDbvtBroadphase();
+	constraintSolver = new btSequentialImpulseConstraintSolver();
+	collisionConfiguration = new btDefaultCollisionConfiguration();
+	dispatcher = new btCollisionDispatcher(collisionConfiguration);
+
+	
 
 	// Uncomment this to enable debug drawer
 	//debug_draw = new DebugDrawer();
@@ -25,6 +46,11 @@ ModulePhysics3D::~ModulePhysics3D()
 
 	// TODO 2: and destroy them!
 
+	delete dispatcher;
+	delete pairCache;
+	delete constraintSolver;
+	delete collisionConfiguration;
+
 }
 
 // ---------------------------------------------------------
@@ -34,9 +60,12 @@ bool ModulePhysics3D::Start()
 
 	// TODO 3: Create the world and set default gravity
 	// Have gravity defined in a macro!
+	world = new btDiscreteDynamicsWorld(dispatcher, pairCache, constraintSolver, collisionConfiguration);
 
+	world->setGravity({ 0,9.8,0 });
+	
 	// Uncomment this line to have the world use our debug drawer
-	// world->setDebugDrawer(debug_draw);
+	world->setDebugDrawer(debug_draw);
 
 	{
 		// TODO 5: Create a big rectangle as ground
@@ -85,6 +114,8 @@ bool ModulePhysics3D::CleanUp()
 	LOG("Destroying 3D Physics simulation");
 
 	// TODO 3: ... and destroy the world here!
+
+	delete world;
 
 	return true;
 }
