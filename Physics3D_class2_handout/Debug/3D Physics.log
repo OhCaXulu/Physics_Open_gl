@@ -1,0 +1,30 @@
+﻿  Application.cpp
+  Color.cpp
+  glmath.cpp
+c:\users\polbm\documents\github\physics_open_gl\physics3d_class2_handout\glmath.cpp(12): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\polbm\documents\github\physics_open_gl\physics3d_class2_handout\glmath.cpp(27): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\polbm\documents\github\physics_open_gl\physics3d_class2_handout\glmath.cpp(43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\polbm\documents\github\physics_open_gl\physics3d_class2_handout\glmath.cpp(53): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\polbm\documents\github\physics_open_gl\physics3d_class2_handout\glmath.cpp(72): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\polbm\documents\github\physics_open_gl\physics3d_class2_handout\glmath.cpp(87): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\polbm\documents\github\physics_open_gl\physics3d_class2_handout\glmath.cpp(103): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\polbm\documents\github\physics_open_gl\physics3d_class2_handout\glmath.cpp(600): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\polbm\documents\github\physics_open_gl\physics3d_class2_handout\glmath.cpp(618): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\polbm\documents\github\physics_open_gl\physics3d_class2_handout\glmath.cpp(758): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\polbm\documents\github\physics_open_gl\physics3d_class2_handout\glmath.cpp(778): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Light.cpp
+  log.cpp
+  Main.cpp
+  ModuleAudio.cpp
+  ModuleCamera3D.cpp
+  ModuleInput.cpp
+  ModulePhysics3D.cpp
+c:\users\polbm\documents\github\physics_open_gl\physics3d_class2_handout\modulephysics3d.cpp(24): warning C4150: deletion of pointer to incomplete type 'DebugDrawer'; no destructor called
+  c:\users\polbm\documents\github\physics_open_gl\physics3d_class2_handout\modulephysics3d.h(9): note: see declaration of 'DebugDrawer'
+  ModuleRenderer3D.cpp
+  ModuleSceneIntro.cpp
+  ModuleWindow.cpp
+  Primitive.cpp
+  Timer.cpp
+  Generating Code...
+  3D Physics.vcxproj -> C:\Users\polbm\Documents\GitHub\Physics_Open_GL\Physics3D_class2_handout\Debug\3D Physics - class2 Handout.exe
